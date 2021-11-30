@@ -1,0 +1,29 @@
+﻿
+@model IEnumerable<coreMVC.Models.Student>
+    @{
+        ViewData["Title"] = "StudentData";
+    }
+    <h1>StudentData</h1>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Student Id</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.StudentId</td>
+                    <td>@student.Name</td>
+                    <td>@student.city</td>
+                    <td>@student.Gender</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+

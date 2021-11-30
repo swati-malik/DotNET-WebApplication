@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "About";
+}
+<h1>@ViewData["Message"]</h1>
+<br />
+<p>There are @ViewData["StudentCount"] number of students.</p>
+<br />
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Student Id</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Gender</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in ViewData["StudentList"] as IList<Student>) // Typecasting was necessary
+        {
+            <tr>
+                <td>@student.StudentId</td>
+                <td>@student.Name</td>
+                <td>@student.city</td>
+                <td>@student.Gender</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<a asp-controller="Student" asp-action="Details">Go To Details</a>

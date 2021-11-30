@@ -1,0 +1,30 @@
+﻿@model coreMVC.Models.Employee
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+<form method="post"asp-controller="Employee" asp-action="create" >
+    <div class="mb-3">
+        <label for="EmployeeId" class="form-label">Employee Id</label>
+        <input type="text" class="form-control" asp-for="EmployeeId">
+    </div>
+
+    <div class="mb-3">
+        <label for="Name" class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="Name">
+    </div>
+
+    <div class="mb-3">
+        <label for="Salary" class="form-label">Salary</label>
+        <input type="text" class="form-control" asp-for="Salary">
+    </div>
+
+    <div class="mb-3">
+        <label for="Designation" class="form-label">Designation</label>
+        <input type="text" class="form-control" asp-for="Designation">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

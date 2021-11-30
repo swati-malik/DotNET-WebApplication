@@ -1,0 +1,33 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "/Views/Shared/mylayout.cshtml";
+}
+<a asp-controller="Student" asp-action="Create" class="btn btn-secondary"> Add New Student</a>
+<h1>@ViewBag.Message</h1>
+<br />
+<p>There are @ViewBag.StudentCount number of students.</p>
+<br />
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Student Id</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Gender</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in ViewBag.StudentList)
+        {
+            <tr>
+                <td>@student.StudentId</td>
+                <td>@student.Name</td>
+                <td>@student.city</td>
+                <td>@student.Gender</td>
+            </tr>
+        }
+    </tbody>
+</table>
